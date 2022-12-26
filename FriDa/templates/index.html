@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Aggiungi voti</h1>
+  <form method="POST" action="/submit">
+    <input type="number" name="anno_scolastico" placeholder="Anno scolastico">
+    <select name="periodo_valutativo">
+      <option value="trimestre">Trimestre</option>
+      <option value="pentamestre">Pentamestre</option>
+    </select>
+    <input type="date" name="data_verifica" placeholder="Data">
+    <select name="tipo_verifica">
+      <option value="scritta">Scritta</option>
+      <option value="orale">Orale</option>
+    </select>
+    <input type="text" name="materia" placeholder="Materia">
+    <input type="text" name="docente" placeholder="Docente">
+    <input type="number" name="voto" placeholder="Voto">
+    <input type="text" name="descrizione" placeholder="Descrizione">
+    <button type="submit">Aggiungi</button>
+  </form>
+  <!-- button that run fridash.py script -->
+  <form method="POST" action="/run">
+    <button type="submit">Open dashboard</button>
+  </form>
+  <table>
+    <tr>
+      {% for header in headings %}
+        <th>{{ header }}</th>
+      {% endfor %}
+    </tr>
+    {% for row in data %}
+      <tr>
+        {% for cell in row %}
+          <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
+
