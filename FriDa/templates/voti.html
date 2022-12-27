@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Aggiungi voti</title>
 </head>
+
 <body>
   <h1>Aggiungi voti</h1>
-  <form method="POST" action="/submit">
-    <input type="number" name="anno_scolastico" placeholder="Anno scolastico">
-    <select name="periodo_valutativo">
-      <option value="trimestre">Trimestre</option>
-      <option value="pentamestre">Pentamestre</option>
-    </select>
+  <form method="POST" action="/voti">
     <input type="date" name="data_verifica" placeholder="Data">
     <select name="tipo_verifica">
       <option value="scritta">Scritta</option>
@@ -28,17 +25,17 @@
   <table>
     <tr>
       {% for header in headings %}
-        <th>{{ header }}</th>
+      <th>{{ header }}</th>
       {% endfor %}
     </tr>
     {% for row in data %}
-      <tr>
-        {% for cell in row %}
-          <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
+    <tr>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
     {% endfor %}
   </table>
 </body>
-</html>
 
+</html>
