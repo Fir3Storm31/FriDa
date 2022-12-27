@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+</head>
+
+<body>
+    <form method="POST" action="/settings">
+        <h1>General</h1>
+        <label for="theme">Theme</label>
+        <select name="theme">
+            <option value=dark>Dark</option>
+            <option value=default>Light</option>
+        </select>
+        <h1>Dashboard 1</h1>
+        <h2>Bar plot</h2>
+        <label for="barplot_color">Colore</label>
+        <input type="color" name="barplot_color">
+        <label for="barplot_grid">Griglia</label>
+        <select name="barplot_grid">
+            <option value=True>True</option>
+            <option value=False>False</option>
+        </select>
+        <h2>Scatter plot</h2>
+        <label for="scatterplot_grid">Griglia</label>
+        <select name="scatterplot_grid">
+            <option value=True>True</option>
+            <option value=False>False</option>
+        </select>
+        <h1>Dashboard 2</h1>
+        <h2>Line plot</h2>
+        <label for="lineplot_linewidth">Spessore della linea</label>
+        <input type="number" name="lineplot_linewidth">
+        <label for="lineplot_grid">Griglia</label>
+        <select name="lineplot_grid">
+            <option value=True>True</option>
+            <option value=False>False</option>
+        </select>
+        <button type="submit">Cambia</button>
+    </form>
+</body>
+
+</html>

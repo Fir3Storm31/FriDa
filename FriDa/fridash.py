@@ -63,9 +63,9 @@ plot = df.hvplot.bar(x='data_verifica', y='voto',
                       title='Voti materia', hover_alpha= 0.5,
                       line_width=3, hover_line_width=5,   
                       line_join='bevel', line_cap='round', 
-                      color      = aesthetics["dashboard1"]["barplot_color"],
-                      grid       = aesthetics["dashboard1"]["barplot_grid"],
-                      hover_cols = aesthetics["dashboard1"]["barplot_hover"],
+                      color      = aesthetics["barplot_color"],
+                      grid       = aesthetics["barplot_grid"],
+                      hover_cols = aesthetics["barplot_hover"],
                       xformatter=DatetimeTickFormatter(
                         hours=["%Y-%m"], days=["%Y-%m-%d"], 
                         months=["%Y-%m"], years=["%m-%d"]))
@@ -75,17 +75,17 @@ plot2 = df2.hvplot.scatter(x='mese_giorno', y='voto', color='anno_scolastico',
                       title='Voti materia per a.s.',
                       line_width=9, hover_line_width=14,
                       line_join='bevel', line_cap='round',
-                      cmap = aesthetics["dashboard1"]["scatterplot_colors"],
-                      grid = aesthetics["dashboard1"]["scatterplot_grid"],)
+                      cmap = aesthetics["scatterplot_colors"],
+                      grid = aesthetics["scatterplot_grid"],)
 
 all_subjects = df3.hvplot.line(x='data_verifica', y='voto', 
                       title='Materie a confronto', by='materia', 
                       hover_line_width=9, hover_alpha=0.5, 
                       line_join='bevel', line_cap='round', 
-                      color      = aesthetics["dashboard2"]["lineplot_colors"],
-                      grid       = aesthetics["dashboard2"]["lineplot_grid"],
-                      line_width = aesthetics["dashboard2"]["lineplot_linewidth"],
-                      hover_cols = aesthetics["dashboard2"]["lineplot_hover"],
+                      color      = aesthetics["lineplot_colors"],
+                      grid       = aesthetics["lineplot_grid"],
+                      line_width = aesthetics["lineplot_linewidth"],
+                      hover_cols = aesthetics["lineplot_hover"],
                       xformatter=DatetimeTickFormatter(
                         hours=["%Y-%m"], days=["%Y-%m-%d"], 
                         months=["%Y-%m"], years=["%m-%d"]))
