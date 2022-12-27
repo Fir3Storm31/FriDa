@@ -1,0 +1,99 @@
+{
+    
+    "informazioni": [
+        {
+            "nome": "nome",
+            "cognome": "cognome",
+            "sezione_primo_anno": "sezione",
+            "sezione_secondo_anno": "sezione",
+            "sezione_terzo_anno": "sezione",
+            "sezione_quarto_anno": "sezione",
+            "sezione_quinto_anno": "sezione",
+            "indirizzo": "indirizzo",
+            "primo anno": "Es. 2019",
+            "bocciature": "0"
+        }
+    ],
+
+    "materie": [
+        {
+            "materia": "matematica",
+            "professore_primo_anno": ["prof1", "prof2", "..."],
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "italiano",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "inglese",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "scienze",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "storia",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "filosofia",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "arte",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "educazione fisica",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "fisica",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        },
+        {
+            "materia": "informatica/latino (cancellarne una)",
+            "professore_primo_anno": "prof1",
+            "professore_secondo_anno": "prof2",
+            "professore_terzo_anno": "prof3",
+            "professore_quarto_anno": "prof4",
+            "professore_quinto_anno": "prof5"
+        }
+    ]
+
+}

@@ -1,0 +1,16 @@
+{   
+    "theme": "dark",
+    "dashboard1": {
+        "barplot_color": "red",
+        "barplot_hover": ["tipo_verifica","descrizione"],
+        "barplot_grid": true,
+        "scatterplot_colors": ["#0000FF", "#00FF00", "#FFFF00", "#FF0000", "#FF00FF"],
+        "scatterplot_grid": true
+    },
+    "dashboard2": {
+        "lineplot_colors": ["red", "blue", "green", "yellow", "purple"],
+        "lineplot_linewidth": 7,
+        "lineplot_hover": ["tipo_verifica","descrizione"],
+        "lineplot_grid": true
+    }
+}

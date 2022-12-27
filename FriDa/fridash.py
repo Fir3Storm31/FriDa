@@ -6,18 +6,22 @@ import panel.widgets as pnw
 import pathlib
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
+import json
 
 from bokeh.models import DatetimeTickFormatter
 
-css = '''
-.bk.panel-widget-box {
-  background: #4b4b4b;
-  border-radius: 5px;
-  border: 1px grey solid;
-}
-'''
+#css = '''
+#.bk.panel-widget-box {
+#  background: #4b4b4b;
+#  border-radius: 5px;
+#  border: 1px grey solid;
+#}
+#'''
 
-pn.extension(raw_css=[css])
+pn.extension()#raw_css=[css])
+
+f = open('Settings/aesthetics.json')
+aesthetics = json.load(f)
 
 path = pathlib.Path(__file__).parent.resolve()
 
@@ -56,40 +60,40 @@ df3 = idf3[
     ].sort_values('data_verifica')
 
 plot = df.hvplot.bar(x='data_verifica', y='voto', 
-                      title='Voti materia', 
-                      line_width=3, hover_line_width=5, 
-                      color='red', hover_alpha=0.5,
-                      line_join='bevel',
-                      line_cap='round', grid=True,
-                      hover_cols=['tipo_verifica','descrizione'],
+                      title='Voti materia', hover_alpha= 0.5,
+                      line_width=3, hover_line_width=5,   
+                      line_join='bevel', line_cap='round', 
+                      color      = aesthetics["dashboard1"]["barplot_color"],
+                      grid       = aesthetics["dashboard1"]["barplot_grid"],
+                      hover_cols = aesthetics["dashboard1"]["barplot_hover"],
                       xformatter=DatetimeTickFormatter(
                         hours=["%Y-%m"], days=["%Y-%m-%d"], 
                         months=["%Y-%m"], years=["%m-%d"]))
-
-colors = ["#0000FF", "#00FF00", "#FFFF00", "#FF0000"]
 
 
 plot2 = df2.hvplot.scatter(x='mese_giorno', y='voto', color='anno_scolastico',
                       title='Voti materia per a.s.',
                       line_width=9, hover_line_width=14,
-                      line_join='bevel', cmap=colors,
-                      line_cap='round', grid=True)
+                      line_join='bevel', line_cap='round',
+                      cmap = aesthetics["dashboard1"]["scatterplot_colors"],
+                      grid = aesthetics["dashboard1"]["scatterplot_grid"],)
 
-all_subjects = df.hvplot.line(x='data_verifica', y='voto', 
-                      title='Materie a confronto', by='materia',
-                      line_width=7, hover_line_width=9, 
-                      color='red', hover_alpha=0.5,
-                      line_join='bevel',
-                      line_cap='round', grid=True,
-                      hover_cols=['tipo_verifica','descrizione'],
+all_subjects = df3.hvplot.line(x='data_verifica', y='voto', 
+                      title='Materie a confronto', by='materia', 
+                      hover_line_width=9, hover_alpha=0.5, 
+                      line_join='bevel', line_cap='round', 
+                      color      = aesthetics["dashboard2"]["lineplot_colors"],
+                      grid       = aesthetics["dashboard2"]["lineplot_grid"],
+                      line_width = aesthetics["dashboard2"]["lineplot_linewidth"],
+                      hover_cols = aesthetics["dashboard2"]["lineplot_hover"],
                       xformatter=DatetimeTickFormatter(
                         hours=["%Y-%m"], days=["%Y-%m-%d"], 
                         months=["%Y-%m"], years=["%m-%d"]))
 
-golden = pn.template.GoldenTemplate(title='FriDa', theme='dark')
+golden = pn.template.GoldenTemplate(title='FriDa', theme=aesthetics["theme"])
 golden.sidebar.append(
     pn.Column(
-        pn.pane.Markdown("## Dashboard"),
+        pn.pane.Markdown("## Controlli dashboard"),
         materia, 
         anno_scolastico)
 )
@@ -105,7 +109,7 @@ golden.main.append(
         )
 )
 
-
+f.close()
 
 app = FastAPI()
 templates = Jinja2Templates(directory="examples/apps/fastApi/templates")
