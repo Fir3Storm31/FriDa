@@ -1,19 +1,17 @@
 
-
 Benvenuto in FriDa :)
 dai frisini per i frisini
 
-Comandi disponibili:
-    frida <opzione>
 
-    - website
-        per aprire una webapp locale sul tuo computer per aggiungere nuovi voti al tuo database
-    - fridash
-        per visualizzare la dashboard con i grafici relativi ai tuoi voti
-    - help
-        per l'elenco dei comandi disponibili
+Usage: frida [option] <command>
+
+Options and arguments:
+-env   : usa questa opzione se vuoi usare un virtual environment
+
+Commands:
+    website     Apre una local webapp per poter gestire tutto ciò che riguarda FriDa
+    fridash     Apre la dashboard con i grafici relativi ai tuoi voti
+    -help       Mostra l'elenco dei comandi disponibili
 
 Update a nuove versioni di FriDa:
-    Potete trovare la guida completa sul profilo di GitHub
-
-    
+    Potete trovare la guida completa sul profilo GitHub

@@ -1,5 +1,4 @@
-import ipywidgets as ipw
-import hvplot.pandas # noqa
+import hvplot.pandas
 import panel as pn
 import pandas as pd
 import panel.widgets as pnw
@@ -7,7 +6,6 @@ import pathlib
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 import json
-
 from bokeh.models import DatetimeTickFormatter
 
 #css = '''

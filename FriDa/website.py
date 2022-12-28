@@ -1,9 +1,6 @@
-import panel as pn
-import holoviews as hv
 import json
 from flask import Flask, request, render_template
 
-from fridash import golden
 from extractcsv import extractcsv
 from functions import addRowToCsv, changeSettings
 
